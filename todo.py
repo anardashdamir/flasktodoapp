@@ -15,10 +15,7 @@ def index():
 @app.route("/complete/<string:id>")
 def completeTodo(id):
     todo =  Todo.query.filter_by(id = id).first()
-    """if todo.complete == True :
-        todo.complete == False
-    else:
-        todo.complete == True"""
+
     todo.complete = not todo.complete
 
     db.session.commit()
